@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Play Store App Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="header">
+        <header>
+            <h1>Google PlayStore App Install Prediction</h1>
+        </header>
+        <nav>
+            <img src="https://kstatic.googleusercontent.com/files/80afd3d845945bf34048c33cc5f8ff020be5f70b3656b813279741d187c86f21caf26eda1be7c52c8bcd9f867f5a504c0581d6280339edf8e58ec6d90436bc5c" />
+        </nav>
+    </section>
+    
+    <div class="center">
+        <h1>Predict App Success</h1>
+        <form action="/predict">
+            <div class="txt_field">
+                <label>Reviews</label>
+                <input name="reviews" type="number" placeholder="No. of Raviews" min="0" required>
+            </div>
+
+            <div class="txt_field">
+                <label>App Type</label>
+                <input name="type" type="number" min="0" max="1" placeholder="Free / Paid" required>
+             
+            </div>
+            <div class="tot">
+                <p>(0=Free  ,     1=Paid)</p>
+            </div>
+
+            <div class="txt_field">
+                <label>Price</label>
+                <input name="price" type="number" placeholder="Price" step="0.01" min="0.00" max="400.0" required>
+            </div>
+
+            <div class="tot">
+                <p>(Min = 0.00$  ,     Max = 400.00$)</p>
+            </div>
+
+            <div class="txt_field">
+                <label for>Rating</label>
+                <input name="rating" type="number" step="0.1" min="0.0" max="5.0" placeholder="Rating" required>
+            </div>
+
+            <input type="submit" name="" value="Predict">
+
+        </form>
+    </div>
+</body>
+</html>
